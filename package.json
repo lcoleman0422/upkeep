@@ -18,7 +18,6 @@
     "nodemon": "nodemon --exec npm run dev",
     "create-sqlite-db": "shx touch ./db/database.sqlite",
     "drop-sqlite-db": "shx rm ./db/database.sqlite",
-    "prepush": "npm test",
     "production": "cross-env NODE_ENV=production node ./api/api.js",
     "test": "cross-env NODE_ENV=testing jest",
     "test-ci": "jest --coverage "

@@ -5,16 +5,23 @@ const Friend = require('../models/friends');
 const UserController = () => {
   const getUsers = async (req, res) => {
     try {
-      // Parse offset and limit from URL query string
-      const offset = parseInt(req.query.offset) || 0;
-      const limit = parseInt(req.query.limit) || 10;
-
+      
+      let users;
       // Find all users with given offset and limits
-      const users = await User.findAll({
-        offset: offset,
-        limit: limit,
-      });
+      if (req.query.offset && req.query.limit) {
+        // Parse offset and limit from URL query string
+        const offset = parseInt(req.query.offset);
+        const limit = parseInt(req.query.limit);
+        users = await User.findAll({
+          offset: offset,
+          limit: limit,
+        });
+      } else {
+        users = await User.findAll();
+      }
+
       return res.status(200).json({ users });
+
     } catch (err) {
       // console.log error and return 500
       console.log(err);

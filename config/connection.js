@@ -7,11 +7,11 @@ const development = {
 };
 
 const testing = {
-  database: 'databasename',
-  username: 'username',
-  password: 'password',
+  database: 'upKeep',
+  username: 'upkeep_api',
+  password: 'upKeep12',
   host: 'localhost',
-  dialect: 'sqlite' || 'mysql' || 'postgres',
+  dialect: 'mysql',
 };
 
 const production = {

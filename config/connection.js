@@ -14,6 +14,7 @@ const testing = {
   dialect: 'mysql',
 };
 
+
 const production = {
   database: process.env.DB_NAME,
   username: process.env.DB_USER,

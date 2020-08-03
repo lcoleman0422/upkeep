@@ -67,7 +67,7 @@ This project has 3 main directories:
 ## Routes 
 ```sh
 GET /users' - returns list of users. Pagination requires both offset and limit query params to be passed
-GET /user/:id/friends' - returns list of user friends - Requires id of user to be passed.  
+GET /users/:id/friends' - returns list of user friends - Requires id of user to be passed.  
 ```
 
 ## Test 

@@ -11,12 +11,13 @@
 ## Install and Use
 
 Download and install MySql server locally and create DB schema with the following credentials. 
-
+ 
+  ```js
   database: 'upKeep',
   username: 'upkeep_api',
   password: 'upKeep12',
   host: 'localhost',
-
+  ```
 
 
 Then clone this repository

@@ -31,24 +31,25 @@ const UserController = () => {
 
   const getFriends = async (req, res) => {
     try {
-      //get array of friend id's for user
+      // get array of friend id's for user
       const userid = req.params.id;
-      const friends_id = await Friend.findAll({
+      const friends = await Friend.findOne({
         where: {
           UserId: userid
         },
         attributes: ['data']
       });
-      //get User info for friends 
+      const friends_ids = friends.dataValues.data.ids
+      // get User info for friends 
       const getFriends = await User.findAll({
         where: {
-          id: friends_id[0].data.ids
+          id: friends_ids
         }
       });
-      //return getfriends results
+      // return getfriends results
       return res.status(200).json({ getFriends });
     } catch (err) {
-      //console.log error and return 500
+      // console.log error and return 500
       console.log(err);
       return res.status(500).json({ msg: 'Internal server error' });
     }

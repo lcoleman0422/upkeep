@@ -80,10 +80,12 @@ replace limit and offset with your desired count for pagination or omit both for
 localhost:2017/users/{:id}/friends 
 replace id with number between 1-13. seed data has established friendships for the following userid's
 [4,7,8,10]
-
 ```
 
-
+To Run unit test run
+```sh
+$ npm test
+```
 
 
 

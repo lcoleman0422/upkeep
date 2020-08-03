@@ -10,7 +10,16 @@
 
 ## Install and Use
 
-Start by cloning this repository
+Download and install MySql server locally and create DB schema with the following credentials. 
+
+  database: 'upKeep',
+  username: 'upkeep_api',
+  password: 'upKeep12',
+  host: 'localhost',
+
+
+
+Then clone this repository
 
 ```sh
 # HTTPS
@@ -39,6 +48,12 @@ $ npm i mysql2 -S
 $ npm start
 ```
 
+Then open another terminal window and run 
+
+```sh
+$ node seed.js 
+```
+
 
 ## Folder Structure
 
@@ -47,14 +62,20 @@ This project has 4 main directories:
 - api - for controllers, models, services, etc.
 - config - for routes, database, etc.
 - db - this is only a dir for the sqlite db, the default for NODE_ENV development
-- test - using [Jest](https://github.com/facebook/jest)
 
 ## Routes 
-```js
-const userRoutes = {
-  'GET /users': 'UserController.getUsers',
-  'GET /user/:id/friends': 'UserController.getFriends',
-};
+GET /users': - returns list of users. Pagination requires both offset and limit query params to be passed
+GET /user/:id/friends': - return list of user friends - Requires id of user to be passed.  
+
+## Test 
+Navigate from any browser or any REST client (i.e Postman) to end point pass applicable params 
+
+### Endpoint
+localhost:2017/users?limit={LIMIT}&offset={OFFSET}
+replace limit and offset with your desired count.
+
+localhost:2017/users/{:id}/friends 
+replace id with number between 1-13. seed data has established friendships
 
 ```
 

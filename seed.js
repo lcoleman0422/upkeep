@@ -67,7 +67,7 @@ const usersForTable = [
         firstName: 'Abella',
         lastName: 'Danger'
     },
-]
+];
 
 const friendsForTable = [
     {

@@ -10,7 +10,7 @@
 
 ## Install and Use
 
-Download and install MySql server locally and create DB schema with the following credentials. 
+Download and install MySql server locally and create DB schema with the following credentials. Ensure that upKeep user has permissions to schema.
  
   ```js
   database: 'upKeep',

@@ -65,18 +65,21 @@ This project has 4 main directories:
 - db - this is only a dir for the sqlite db, the default for NODE_ENV development
 
 ## Routes 
-GET /users': - returns list of users. Pagination requires both offset and limit query params to be passed
-GET /user/:id/friends': - return list of user friends - Requires id of user to be passed.  
+```sh
+GET /users' - returns list of users. Pagination requires both offset and limit query params to be passed
+GET /user/:id/friends' - return list of user friends - Requires id of user to be passed.  
+```
 
 ## Test 
 Navigate from any browser or any REST client (i.e Postman) to end point pass applicable params 
 
-### Endpoint
+```sh
 localhost:2017/users?limit={LIMIT}&offset={OFFSET}
-replace limit and offset with your desired count.
+replace limit and offset with your desired count for pagination or omit both for all users
 
 localhost:2017/users/{:id}/friends 
-replace id with number between 1-13. seed data has established friendships
+replace id with number between 1-13. seed data has established friendships for the following userid's
+[4,7,8,10]
 
 ```
 

@@ -103,4 +103,4 @@ const friendsForTable = [
         await Friend.bulkCreate(friendsForTable);
         process.exit();
     } catch (err) { console.log(err); }
-})()
+})();

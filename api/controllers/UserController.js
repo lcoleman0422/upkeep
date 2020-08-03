@@ -5,7 +5,6 @@ const Friend = require('../models/friends');
 const UserController = () => {
   const getUsers = async (req, res) => {
     try {
-      
       let users;
       // Find all users with given offset and limits
       if (req.query.offset && req.query.limit) {
@@ -19,7 +18,6 @@ const UserController = () => {
       } else {
         users = await User.findAll();
       }
-
       return res.status(200).json({ users });
 
     } catch (err) {
@@ -39,7 +37,7 @@ const UserController = () => {
         },
         attributes: ['data']
       });
-      const friends_ids = friends.dataValues.data.ids
+      const friends_ids = friends.dataValues.data.ids;
       // get User info for friends 
       const getFriends = await User.findAll({
         where: {
@@ -59,4 +57,5 @@ const UserController = () => {
     getFriends
   };
 };
+
 module.exports = UserController;

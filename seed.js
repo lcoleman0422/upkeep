@@ -94,21 +94,13 @@ const friendsForTable = [
             ids: [2, 5, 6, 3],
         }
     },
-]
+];
 
 //create seed data for app
-const seed_users = async () => {
-    return Users.bulkCreate(usersForTable);
-}
-
-const seed_friends = async () => {
-    return Friend.bulkCreate(friendsForTable);
-}
-
 (async () => {
     try {
-        await seed_users();
-        await seed_friends();
+        await Users.bulkCreate(usersForTable);
+        await Friend.bulkCreate(friendsForTable);
         process.exit();
     } catch (err) { console.log(err); }
 })()

@@ -58,7 +58,7 @@ $ node seed.js
 
 ## Folder Structure
 
-This project has 4 main directories:
+This project has 3 main directories:
 
 - api - for controllers, models, services, etc.
 - config - for routes, database, etc.
